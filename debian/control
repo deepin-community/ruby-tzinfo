@@ -1,0 +1,28 @@
+Source: ruby-tzinfo
+Section: ruby
+Priority: optional
+Maintainer: Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
+Uploaders: Hleb Valoshka <375gnu@gmail.com>
+Build-Depends: debhelper-compat (= 13),
+               gem2deb (>= 1),
+               ruby-concurrent (>= 1.0),
+               tzdata,
+Standards-Version: 4.6.0
+Vcs-Git: https://salsa.debian.org/ruby-team/ruby-tzinfo.git
+Vcs-Browser: https://salsa.debian.org/ruby-team/ruby-tzinfo
+Homepage: https://tzinfo.github.io
+Testsuite: autopkgtest-pkg-ruby
+XS-Ruby-Versions: all
+Rules-Requires-Root: no
+
+Package: ruby-tzinfo
+Architecture: all
+XB-Ruby-Versions: ${ruby:Versions}
+Depends: ${misc:Depends},
+         ${ruby:Depends},
+         ${shlibs:Depends}
+Breaks: ruby-activesupport (<< 2:6.1~)
+Description: Daylight-savings aware timezone library
+ TZInfo is a Ruby library that uses the standard tz (Olson) database
+ to provide daylight savings aware transformations between times
+ in different time zones.
